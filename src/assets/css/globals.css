@@ -1,0 +1,28 @@
+@media screen and (min-width: 768px) {
+  html {
+    font-size: var(--rem);
+  }
+}
+body {
+  font-family: degular, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  /* // font-size: 1.8rem; */
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
