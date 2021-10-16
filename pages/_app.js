@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
       </Head>
       <ViewportProvider>
           <div id="page_container" className={`${bodyClassName} overflow-hidden`}>
-            <div className="main_content mt-[66px] md:mt-[53px] lg:mt-[8.3rem] mb-[35px] lg:mb-[4.87rem] lg:px-[5rem] px-[15px]">
+            <div className="main_content">
               <Component {...pageProps} />
             </div>
           </div>

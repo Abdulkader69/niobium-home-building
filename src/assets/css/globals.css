@@ -1,28 +1,76 @@
-@media screen and (min-width: 768px) {
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1025px) {
   html {
     font-size: var(--rem);
   }
 }
 body {
-  font-family: degular, sans-serif;
-  font-weight: 500;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  /* // font-size: 1.8rem; */
-}
-html,
-body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.2;
 }
-
 a {
-  color: inherit;
+  color: #000;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+/* ================== Animated Button ===================== */
+.animated-btn,
+.animated-btn p, 
+.animated-btn p span {
+  transition: all 0.3s ease-in;
 }
+.animated-btn::before {
+  position: absolute;
+  content: "";
+  height: calc(100% + 0.95rem);
+  width: calc(100% + 0.95rem);
+  background-color: #000;
+  transition: all 0.3s ease-in;
+}
+.animated-btn p::before, .animated-btn p::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  transition: all 0.3s ease-in;
+}
+.animated-btn p::before {
+  border-top: 0.95rem solid #fff;
+  border-left: 0.95rem solid transparent;
+  right: -0.95rem;
+  top: 0px;
+}
+.animated-btn p::after {
+  border-bottom: 0.95rem solid #fff;
+  border-right: 0.95rem solid transparent;
+  left: 0px;
+  bottom: -0.95rem;
+}
+a.animated-btn:hover::before {
+  width: calc(100% + 1.5rem);
+  height: calc(100% + 1.5rem);
+}
+a.animated-btn:hover p::before {
+  border-top: 1.5rem solid #fff;
+  border-left: 1.5rem solid transparent;
+  right: -1.5rem;
+}
+a.animated-btn:hover p::after {
+  border-bottom: 1.5rem solid #fff;
+  border-right: 1.5rem solid transparent;
+  bottom: -1.5rem;
+}
+a.animated-btn:hover span {
+  top: 1.5rem;
+  left: 1.5rem;
+}
+/* ================== Animated Button ===================== */
