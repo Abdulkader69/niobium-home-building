@@ -16,10 +16,14 @@ body {
   padding: 0;
   margin: 0;
   line-height: 1.2;
+  scroll-behavior: smooth;
 }
 a {
   color: #000;
   text-decoration: none;
+}
+p {
+    line-height: 1.5;
 }
 
 /* ================== Animated Button ===================== */
@@ -74,3 +78,11 @@ a.animated-btn:hover span {
   left: 1.5rem;
 }
 /* ================== Animated Button ===================== */
+
+.preloader-wrapper {
+  transition: all 0.5s ease-in;
+}
+.preloader-wrapper.loaded_mod {
+  opacity: 0;
+  visibility: hidden;
+}
