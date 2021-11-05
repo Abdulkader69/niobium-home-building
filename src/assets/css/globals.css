@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 
 * {
@@ -85,4 +91,36 @@ a.animated-btn:hover span {
 .preloader-wrapper.loaded_mod {
   opacity: 0;
   visibility: hidden;
+}
+.menu-wrap button p {
+  right: 7rem;
+  top: 50%;
+  transform: translate(0px, -50%);
+  transition: all 0.3s ease-in;
+}
+.menu-wrap button p.close {
+  opacity: 0;
+  transform: translate(75px, -50%);
+}
+.menu-wrap button.is_active p.menu {
+  transform: translate(-60px, -50%);
+  opacity: 0;
+}
+.menu-wrap button.is_active p.close {
+  opacity: 1;
+  transform: translate(0px, -50%);
+}
+.menu-wrap button.is_active .hambarger span:first-child {
+  transform: rotate(45deg);
+  top: 10px;
+}
+.menu-wrap button.is_active .hambarger span:nth-child(2) {
+  display: none;
+}
+.menu-wrap button.is_active .hambarger span:last-child {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+.menu-wrap button .hambarger span {
+  transition: all 0.3s ease-in-out;
 }

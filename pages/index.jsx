@@ -16,7 +16,7 @@ function Home() {
       paused: false,
       onComplete: () => {
           element.querySelector(".preloader-wrapper").classList.add('loaded_mod');
-          heroAnimTL.play();
+          heroAnimTL.play(); 
       }
     });
 
@@ -36,8 +36,34 @@ function Home() {
     })
 
     let heroAnimTL =  gsap.timeline();
-    
+    const customDelay = .4;
     heroAnimTL
+      .addLabel('logoLabel')
+		  .fromTo('.logo_bg', {
+			  // scaleX: 0
+		  }, {
+        // duration: .3,
+        // scaleX: 1,
+        delay: 1.2,
+		  }, `logoLabel+=${customDelay}`)
+      .fromTo('.logo_in', {
+        opacity: 0,
+        x: 50
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: .3,
+      }, `logoLabel+=${customDelay}`)
+      .fromTo('.logo_wrap', {
+        xPercent: 0,
+        yPercent: 0,
+      }, {
+        xPercent: 16.66,
+        yPercent: 30,
+        duration: .3,
+        ease: 'none',
+      })
+      .addLabel('img')
     .fromTo(['.image-wrap', '.hero-image'], {
       xPercent: gsap.utils.wrap([-100, 100]),
       yPercent: gsap.utils.wrap([-100, 100]),
@@ -47,7 +73,6 @@ function Home() {
       yPercent: gsap.utils.wrap([0, 0]),
       opacity: gsap.utils.wrap([1, 1]),
       ease: 'none',
-      delay: 1.5,
     })
 
     .fromTo('.hero-content-stagger', {
@@ -105,7 +130,7 @@ function Home() {
               <div className="animated-btn-wrap hero-content-stagger">
                 <a className="animated-btn text-white uppercase relative inline-block" href="#new-way-section">
                   <p className="relative">
-                    <span className="relative bg-[#f0106e] top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Continue</span>
+                    <span className="relative bg-primary top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Continue</span>
                   </p>
                 </a>
               </div>
@@ -125,7 +150,7 @@ function Home() {
               <div className="animated-btn-wrap hero-content-stagger">
                 <a className="animated-btn text-white uppercase relative inline-block" href="#">
                   <p className="relative">
-                    <span className="relative bg-[#f0106e] top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
+                    <span className="relative bg-primary top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
                   </p>
                 </a>
               </div>
@@ -141,7 +166,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="section hero-headline-section overflow-hidden bg-[#f0106e] py-24 px-96 mt-60">
+      <div className="section hero-headline-section overflow-hidden bg-primary py-24 px-96 mt-60">
         <div className="flex items-center justify-center">
           <h2 className="text-9xl w-full max-w-[170rem] text-center text-gray-100 leading-[1.2]">Our tenants are one in a million, not one of a million</h2>
         </div>
@@ -153,14 +178,14 @@ function Home() {
           <div className="new-way-image w-[66rem]">
             <img className="w-full" src="http://niobium-home-building.codegaints.com/wp-content/uploads/2021/10/kader1.jpg" alt="" />
           </div>
-          <div className="new-way-content w-[100rem] pl-[20rem]">
+          <div className="new-way-content w-calc-100-66 pl-[20rem]">
             <div className="paragraph text-[2.2rem] mb-[8rem] hero-content-stagger">
               <p className="font-light">Our mission goes beyond the individual homes and takes into account the impact to the environment and society at large. We strike a balance between profitability and following sustainable and socially-responsible practices.</p>
             </div>
             <div className="animated-btn-wrap hero-content-stagger">
                 <a className="animated-btn text-white uppercase relative inline-block" href="#">
                   <p className="relative">
-                    <span className="relative bg-[#f0106e] top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
+                    <span className="relative bg-primary top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
                   </p>
                 </a>
               </div>
@@ -168,14 +193,14 @@ function Home() {
         </div>
 
         <div className="flex flex-nowrap about-item items-center mb-36">
-          <div className="new-way-content w-[100rem] pr-[20rem]">
+          <div className="new-way-content w-calc-100-66 pr-[20rem]">
             <div className="paragraph text-[2.2rem] mb-[8rem] hero-content-stagger">
               <p className="font-light">Our mission goes beyond the individual homes and takes into account the impact to the environment and society at large. We strike a balance between profitability and following sustainable and socially-responsible practices.</p>
             </div>
             <div className="animated-btn-wrap hero-content-stagger">
                 <a className="animated-btn text-white uppercase relative inline-block" href="#">
                   <p className="relative">
-                    <span className="relative bg-[#f0106e] top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
+                    <span className="relative bg-primary top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
                   </p>
                 </a>
               </div>
@@ -189,20 +214,20 @@ function Home() {
           <div className="new-way-image w-[66rem]">
             <img className="w-full" src="http://niobium-home-building.codegaints.com/wp-content/uploads/2021/10/kader1.jpg" alt="" />
           </div>
-          <div className="new-way-content w-[100rem] pl-[20rem]">
+          <div className="new-way-content w-calc-100-66 pl-[20rem]">
             <div className="paragraph text-[2.2rem] mb-[8rem] hero-content-stagger">
               <p className="font-light">Our mission goes beyond the individual homes and takes into account the impact to the environment and society at large. We strike a balance between profitability and following sustainable and socially-responsible practices.</p>
             </div>
             <div className="animated-btn-wrap hero-content-stagger">
                 <a className="animated-btn text-white uppercase relative inline-block" href="#">
                   <p className="relative">
-                    <span className="relative bg-[#f0106e] top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
+                    <span className="relative bg-primary top-[0.95rem] left-[0.95rem] flex items-center font-regular text-[3.5rem] px-[2rem] py-[1rem]">Learn more</span>
                   </p>
                 </a>
               </div>
           </div>
         </div>
-
+        {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?controls=0&amp;list=PLgcPxVODYXGJS6iqdZe1LUUW9iXS7ZGrf" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
       </div>
 
 
